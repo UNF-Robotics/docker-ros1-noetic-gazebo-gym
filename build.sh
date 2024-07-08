@@ -30,5 +30,13 @@ sed -i -e "s|^ DEPENDS gazebo| DEPENDS GAZEBO|" \
 	src/gazebo-pkgs/gazebo_grasp_plugin/CMakeLists.txt \
 	src/gazebo-pkgs/gazebo_version_helpers/CMakeLists.txt
 
-# build
+# install missing files
+echo "install(
+    DIRECTORY config launch scripts urdf
+    DESTINATION share/${PROJECT_NAME}
+)" >> src/ur_gazebo/CMakeLists.txt
+
+
+# build and install
+catkin config --install
 catkin build
