@@ -12,12 +12,8 @@ RUN apt-get install -y --no-install-recommends \
 	ros-dev-tools \
 	ros-noetic-gazebo-ros \
 	ros-noetic-rviz \
-	ros-noetic-ur-description \
 	unzip \
 	&& rm -rf /var/lib/apt/lists/*
-
-#	catkin-lint \
-#	ros-noetic-control-msgs \
 
 # install gymnasium & torch
 RUN pip install gymnasium torch
