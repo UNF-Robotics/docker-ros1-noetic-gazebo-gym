@@ -15,8 +15,8 @@ RUN apt-get install -y --no-install-recommends \
 	unzip \
 	&& rm -rf /var/lib/apt/lists/*
 
-# install gymnasium & torch
-RUN pip install gymnasium torch
+# install gymnasium
+RUN pip install gymnasium
 
 # copy and run build script vs many RUN commands
 COPY build.sh ./build.sh
