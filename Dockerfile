@@ -19,8 +19,8 @@ RUN apt-get install -y --no-install-recommends \
 #	catkin-lint \
 #	ros-noetic-control-msgs \
 
-# install gymnasium
-RUN pip install gymnasium
+# install gymnasium & torch
+RUN pip install gymnasium torch
 
 # copy and run build script vs many RUN commands
 COPY build.sh ./build.sh
