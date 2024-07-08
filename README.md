@@ -7,7 +7,7 @@ and RViz for various robotics purposes at UNF, club, research, and development.
 This container contains the initial environment to build and run ROS 1
 simulations using Gazebo, Gymnasium, and RViz.
 
-This container has a pre-built installation of [sim2real-ur-gym-gazebo](https://github.com/ammar-n-abbas/sim2real-ur-gym-gazebo)
+This container has a pre-built installation of [ros-gazebo-gym](https://github.com/rickstaa/ros-gazebo-gym)
 for complete simulation and reinforcement Learning development environment,
 with sources in `/opt/ros_ws/src`.
 
