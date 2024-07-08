@@ -6,6 +6,7 @@ RUN apt-get update && apt-get upgrade -y --no-install-recommends
 # install gazebo & rviz2 packages
 RUN apt-get install -y --no-install-recommends \
 	nano \
+	pip \
 	psmisc \
 	python3-catkin-tools \
 	ros-dev-tools \
@@ -17,6 +18,9 @@ RUN apt-get install -y --no-install-recommends \
 
 #	catkin-lint \
 #	ros-noetic-control-msgs \
+
+# install gymnasium
+RUN pip install gymnasium
 
 # copy and run build script vs many RUN commands
 COPY build.sh ./build.sh
