@@ -3,15 +3,10 @@
 # download and prepare sources
 mkdir -vp /opt/ros_ws/src
 cd /opt/ros_ws/src
-wget -q https://github.com/ammar-n-abbas/sim2real-ur-gym-gazebo/archive/refs/heads/master.zip
-unzip -q master.zip
-mv -v sim2real-ur-gym-gazebo-master/* ./
-rm -r master.zip ur_openai_gym
-
-# update ur_openai
-wget -q https://github.com/cambel/ur_openai_gym/archive/refs/heads/main.zip
-unzip -q main.zip
-rm main.zip
+wget -q https://github.com/rickstaa/ros-gazebo-gym/archive/refs/heads/noetic.zip
+unzip -q noetic.zip
+mv -v ros-gazebo-gym-noetic ros-gazebo-gym
+rm -r noetic.zip
 
 # set ROS env
 . /opt/ros/noetic/setup.sh
@@ -23,19 +18,6 @@ rosdep update
 rosdep fix-permissions
 apt-get update
 rosdep install --from-paths src --ignore-src -r -y
-
-# correct depend
-sed -i -e "s|^ DEPENDS gazebo| DEPENDS GAZEBO|" \
-	src/gazebo-pkgs/gazebo_grasp_plugin_ros/CMakeLists.txt \
-	src/gazebo-pkgs/gazebo_grasp_plugin/CMakeLists.txt \
-	src/gazebo-pkgs/gazebo_version_helpers/CMakeLists.txt
-
-# install missing files
-echo "install(
-    DIRECTORY config launch scripts urdf
-    DESTINATION share/${PROJECT_NAME}
-)" >> src/ur_gazebo/CMakeLists.txt
-
 
 # build and install
 catkin config --install
