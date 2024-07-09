@@ -8,6 +8,7 @@ This container contains the initial environment to build and run ROS 1
 simulations using Gazebo, Gymnasium, and RViz.
 
 This container has a pre-built installation of [ros-gazebo-gym](https://github.com/rickstaa/ros-gazebo-gym)
+along with [panda_gazebo](https://github.com/rickstaa/panda-gazebo/)
 for complete simulation and reinforcement Learning development environment,
 with sources in `/opt/ros_ws/src`.
 
@@ -47,4 +48,10 @@ or `rviz`, attach another shell to run both and/or other ROS commands.
 docker run --net=host --rm -it --env DISPLAY=$DISPLAY --privileged \
     -v /dev:/dev -v ~/mypkg_ros/:/opt/ros_ws/src/mypkg_ros \
     unfrobotics/docker-ros1-noetic-gazebo-gym:latest
+```
+
+### Start sample world
+Run the following command to start a sample world, arm with empty world
+```bash
+roslaunch panda_gazebo start_simulation.launch
 ```
