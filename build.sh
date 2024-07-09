@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# prepare ros on login
+echo 'source "/opt/ros_ws/install/setup.bash"' >> /root/.bashrc
+
 # download and prepare sources
 mkdir -vp /opt/ros_ws/src
 cd /opt/ros_ws/src
