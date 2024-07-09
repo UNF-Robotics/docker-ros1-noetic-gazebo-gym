@@ -14,6 +14,7 @@ RUN apt-get install -y --no-install-recommends \
 	ros-dev-tools \
 	ros-noetic-gazebo-ros \
 	ros-noetic-rviz \
+	ros-noetic-rviz-visual-tools \
 	unzip \
 	&& rm -rf /var/lib/apt/lists/*
 
