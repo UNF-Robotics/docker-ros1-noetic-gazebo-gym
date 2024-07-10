@@ -5,7 +5,7 @@
 Docker image with ROS 1 Noetic Development Environment with Gazebo, Gymnasium, 
 and RViz for various robotics purposes at UNF, club, research, and development.
 This container contains the initial environment to build and run ROS 1
-simulations using Gazebo, Gymnasium, and RViz.
+simulations using Gazebo, Gymnasium, PyTorch, and RViz.
 
 This container has a pre-built installation of [ros-gazebo-gym](https://github.com/rickstaa/ros-gazebo-gym)
 along with [panda_gazebo](https://github.com/rickstaa/panda-gazebo/)
