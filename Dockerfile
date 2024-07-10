@@ -19,7 +19,13 @@ RUN apt-get install -y --no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/*
 
 # install python packages
-RUN pip install --no-cache-dir gymnasium numpy==1.23.1 stable_baselines3 torch
+RUN pip install --no-cache-dir \
+	gymnasium \
+	gymnasium_robotics \
+	numexpr==2.7.3 \
+	numpy==1.23.1 \
+	stable_baselines3 \
+	torch
 
 # copy and run build script vs many RUN commands
 COPY build.sh ./build.sh
