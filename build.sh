@@ -79,3 +79,6 @@ cp -r src/panda_gazebo/src/panda_gazebo/* install/lib/python3/dist-packages/pand
 # modify franka_ros
 sed -i -e '20i\ \ <arg name="physics"     default="ode"   doc="" />' \
         /opt/ros/noetic/share/franka_gazebo/launch/panda.launch
+
+# free some space ~50MB
+rm -rf /var/lib/apt/lists/*
